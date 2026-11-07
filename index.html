@@ -1568,7 +1568,7 @@ PAGES.attendance_map = () => `<div class="page"><div class="card" style="positio
     <div class="row mt" style="gap:6px">${['map','satellite','terrain'].map((x,i)=>`<button class="ibtn ${x==='satellite'?'blue':''}" title="${x}" onclick="${A((ev,el)=>{ el.parentNode.querySelectorAll('.ibtn').forEach(z=>z.classList.remove('blue')); el.classList.add('blue'); setMapLayer(x); })}">${ic(x==='map'?'map':x==='satellite'?'satellite':'terrain')}</button>`).join('')}<button class="ibtn" title="المفتاح" onclick="${A(()=>dialog({title:'المفتاح', icon:'info', body:`<div class="info"><span class="i-ic c-red">${ic('person_pin_circle','s16')}</span><b>الموظف</b></div><div class="info"><span class="i-ic c-blue">${ic('store','s16')}</span><b>الفرع</b></div>`}))}">${ic('info_outline')}</button></div>
     ${P('map-l', mapList)}
   </div>
-  <button class="tb-btn" style="position:absolute;bottom:20px;inset-inline-end:16px;width:40px;height:40px;background:var(--navy);z-index:1000" title="تحديث" onclick="${A(()=>{ upd('map-l'); toast(mapRows().length ? 'تم التحديث' : 'لا يوجد تسجيل حضور اليوم'); })}">${ic('refresh')}</button></div></div>`;
+  <button class="tb-btn" style="position:absolute;bottom:20px;inset-inline-start:16px;width:40px;height:40px;background:var(--navy);z-index:1000" title="تحديث" onclick="${A(()=>{ upd('map-l'); toast(mapRows().length ? 'تم التحديث' : 'لا يوجد تسجيل حضور اليوم'); })}">${ic('refresh')}</button></div></div>`;
 /** today's check-ins for the map panel: search (name / email / code) and the «check-in only» / «check-out only» tabs */
 function mapRows(){
   const f = UI['map.f'] || '';
